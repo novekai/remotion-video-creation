@@ -14,6 +14,11 @@ render.log
 Thumbs.db
 .vscode/
 .idea/
+.claude/
+
+# Local helpers
+render.bat
+render.sh
 
 # Env
 .env
