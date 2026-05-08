@@ -1,6 +1,6 @@
 # Remotion video creation — Lumen Clinic × NovekAI
 
-Programmatic 175-second product demo of the **Lumen Clinic** AI voice receptionist (aesthetic clinic on Plateau Mont-Royal, Montreal). Built with [Remotion](https://www.remotion.dev) by [NovekAI](https://novekai.agency).
+Programmatic 175-second product demo of the **Lumen Clinic** AI voice receptionist (aesthetic clinic on Plateau Mont-Royal, Montreal). Built with [Remotion](https://www.remotion.dev) by [NovekAI](https://novekaiworkforce.com).
 
 ## What it shows
 

@@ -1,10 +1,14 @@
-import {AbsoluteFill, useCurrentFrame, interpolate, spring, useVideoConfig} from 'remotion';
-import {Background, GlowTitle} from '../components';
+import {AbsoluteFill, Img, staticFile, useCurrentFrame, interpolate, spring, useVideoConfig} from 'remotion';
+import {Background} from '../components';
 import {colors} from '../theme';
 
 export const SceneOutro: React.FC = () => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
+
+  const logoS = spring({fps, frame, config: {damping: 200}});
+  const logoOpacity = interpolate(logoS, [0, 1], [0, 1]);
+  const logoScale = interpolate(logoS, [0, 1], [0.92, 1]);
 
   const subS = spring({fps, frame: frame - 30, config: {damping: 200}});
   const subOpacity = interpolate(subS, [0, 1], [0, 1]);
@@ -27,9 +31,16 @@ export const SceneOutro: React.FC = () => {
         >
           Built by
         </div>
-        <GlowTitle size={170} from={0} color={colors.gold}>
-          NovekAI
-        </GlowTitle>
+        <Img
+          src={staticFile('novekai-logo.png')}
+          style={{
+            width: 520,
+            height: 'auto',
+            opacity: logoOpacity,
+            transform: `scale(${logoScale})`,
+            filter: `drop-shadow(0 0 50px ${colors.violetSoft}) drop-shadow(0 0 120px ${colors.violetSoft})`,
+          }}
+        />
         <div
           style={{
             fontSize: 36,
@@ -39,7 +50,7 @@ export const SceneOutro: React.FC = () => {
             marginTop: 20,
           }}
         >
-          novekai.agency
+          novekaiworkforce.com
         </div>
         <div
           style={{
@@ -52,7 +63,7 @@ export const SceneOutro: React.FC = () => {
             opacity: ctaOpacity,
           }}
         >
-          espoir@novekai.agency
+          contact@novekaiworkforce.com
         </div>
       </AbsoluteFill>
     </Background>
